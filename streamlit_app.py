@@ -28,11 +28,9 @@ st.dataframe(fruits_to_show)
 
 def get_fruityvice_data(this_fruit_choice):
    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+this_fruit_choice)
-    fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-    return fruityvice_normalized
+   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+   return fruityvice_normalized
     
-  
-
 st.header("Fruityvice Fruit Advice!")
 try:
   fruit_choice = st.text_input('What fruit would you like information about?')
